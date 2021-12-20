@@ -1,0 +1,263 @@
+@import "zerostyle.scss";
+
+.wrapper {
+	display: grid;
+	margin: 0 auto;
+	max-width: 1280px;
+	padding: 10px;
+	height: 100%;
+}
+.header {
+	height: 10px;
+	display: grid;
+	grid-auto-flow: column;
+	grid-template: 1fr / 1fr min-max(50px, 1fr) 1fr;
+
+		&__leftSide {
+			background-color: gray;
+		}
+
+		&__logo {
+			background-color: rgb(85, 85, 85);
+			color: blue;
+		}
+
+		&__rightSide {
+			background-color: gray;
+		}
+
+		&__menu {
+			margin: 0 auto;
+			max-width: 50px;
+			position: relative;
+
+			span{
+				padding-left: 2px;
+				cursor: pointer;
+				user-select: none
+			}
+			span:before{
+				display: inline-block;
+				content: "";
+				width: 10px;
+				height: 10px;
+				border-radius: 5px;
+				background-color: blue;
+			}
+		}
+}
+.menu {
+
+		&__list {
+			user-select: none;
+			display: none;
+			width: 50px;
+			position: fixed;
+			text-align: left;
+			border-radius: 0 0 3px 3px;
+			overflow: hidden;
+			li:before{
+				display: inline-block;
+				content: "";
+				width: 10px;
+				height: 10px;
+				border-radius: 5px;
+				background-color: blue;
+			}
+		}
+
+		&__item {
+			padding-left: 2px;
+			background-color: gray;
+		/* 	display: none; */
+		}
+}
+
+.modal {
+
+	&__overlay {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		bottom: 0;
+		right: 0;
+		background-color: rgba(0, 0, 0, 0.274);
+	}
+
+	&__window {
+		color: #fff;
+		display: grid;
+		padding: 10px;
+		margin: 10% auto;
+		border: 1px solid black;
+		grid-template: auto 1fr/ 1fr;
+		background-color: rgb(45, 45, 146);
+	}
+
+	&__header {
+		display: grid;
+		grid-auto-flow: column;
+	}
+
+	&__title {
+		margin: 0 0 10px 0;
+	}
+
+	&__close {
+		margin: 2px 5px 0 0;
+		justify-self: end;
+		cursor: pointer;
+	}
+
+	&__main {
+	}
+}
+
+.main {
+	margin: 20px 0 0 0;
+
+	&__testArea {
+		display: grid;
+		grid-auto-flow: column;
+		grid-template: 1fr/ 1fr 1fr;
+	}
+
+	&__form {
+	}
+}
+.testArea {
+
+	&__leftBox {
+		justify-self: center;
+		margin: 10px;
+	}
+
+	&__rightBox {
+		display: grid;
+		grid-template: 1fr 1fr / 1fr;
+		align-content: end;
+		justify-self: center;
+		margin: 10px;
+	}
+}
+.leftBox {
+
+	&__border {
+		display: grid;
+		grid-auto-flow: row;
+		grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+	}
+
+	&__item {
+		position: relative;
+		user-select: none;
+		display: grid;
+		border: 1px solid black;
+		width: 40px;
+		height: 40px;
+		justify-content: center;
+		align-items: center;
+	}
+}
+.rightBox {
+
+	&__buttons {
+		display: grid;
+		grid-auto-flow: column;
+		grid-template: 1fr 1fr / 1fr 1fr 1fr;
+		gap: 1px;
+	}
+
+	&__button {
+		user-select: none;
+		cursor: pointer;
+		display: grid;
+		border: 1px solid black;
+		width: 40px;
+		height: 40px;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.buttonUp {
+	grid-area: 1/2;
+}
+.buttonDown {
+	grid-area: 2/2;
+}
+.buttonLeft {
+	grid-area: 2/1;
+}
+.buttonRight {
+	grid-area: 2/3;
+}
+.buttonTest {
+	grid-area: 1/1;
+	align-self: start;
+}
+.buttonForRemove {
+	grid-area: 1/2;
+	align-self: start;
+}
+
+.redBody{
+	position: absolute;
+	left: 10px;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	background-color: rgba(255, 0, 0, 0.342);
+}
+
+.controlledBody{
+	position: fixed;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	background-color: rgba(12, 87, 16, 0.836);
+}
+
+.form {
+
+	&__submit {
+		/* background-color: cadetblue; */
+	}
+	&__submit:disabled {
+		background-color: rgba(201, 207, 241, 0.253);
+		pointer-events: none;
+	}
+/* 	&__submit:active {
+		background-color: crimson;
+		pointer-events: none;
+	} */
+
+	&__post {
+	}
+
+	&__inputBox {
+	}
+
+	&__input{
+		border: 1px solid black;
+	}
+}
+
+.footer {
+	height: 15px;
+	background-color: gray;
+	align-self: end;
+}
+
+.inputBox {
+
+	&__inputDate {
+		font-size: 10px;
+		margin: 0 0 1px 0;
+	}
+
+	&__inputText {
+		font-size: 15px;
+		margin: 0 0 20px 0;
+	}
+}
